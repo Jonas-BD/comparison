@@ -12,18 +12,33 @@ const myAnsverInput = document.getElementById('answerOne');
 const myAnsverButton = document.getElementById('answerButton');
 const myAnsverFeedbackElement = document.getElementById('answerFeedback');
 
-myAnsverButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  /* din kode her. Skriv en alert der skriver "du har svarret rigtigt" hvis svarret er true
-  og "du har svarret forkert" hvis svaret er false*/
-  let myAnswer = myAnsverInput.value;
-  console.log('Answer is: ' + myAnswer);
-});
+// myAnsverButton.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   /* din kode her. Skriv en alert der skriver "du har svarret rigtigt" hvis svarret er true
+//   og "du har svarret forkert" hvis svaret er false*/
+//   let myAnswer = myAnsverInput.value;
+//   console.log('Answer is: ' + myAnswer);
+//   if (myAnsverInput.selectedOptions[0].text === 'nej') { // Tjekker om 'nej' er det rigtige svar, nu når der er to der har value 'true'
+//     myAnsverFeedbackElement.innerHTML = 'Du har svaret rigtigt';
+//   } else {
+//     myAnsverFeedbackElement.innerHTML = 'Du har svaret forkert';
+//   }
+// });
 
 /*Opgave 2: udkommenter opgave 1, og omskriv nu din funktion til to korrekte svar:
 nej
 ja i disney film
 */
+myAnsverButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  let myAnswer = myAnsverInput.value;
+  console.log('Answer is: ' + myAnswer);
+  if (myAnsverInput.value === 'true') {
+    myAnsverFeedbackElement.innerHTML = 'Du har svaret rigtigt';
+  } else {
+    myAnsverFeedbackElement.innerHTML = 'Du har svaret forkert';
+  }
+});
 
 
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
@@ -33,6 +48,7 @@ ja i disney film
 - alder skal være større end 12.
  du må gerne bare consol.logge de forskellige tests i konsollen, men hvis du kan må du gerne lave feedback i elementet formValideringResult.
 */
+validateEmail(myEmail);
 
 
 
